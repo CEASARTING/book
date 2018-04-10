@@ -1,6 +1,5 @@
 package com.ceasar.book.mapper;
 
-
 import java.util.List;
 
 import com.ceasar.book.model.Dict;

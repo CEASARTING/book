@@ -8,6 +8,8 @@
     <result column="book_url" jdbcType="VARCHAR" property="bookUrl" />
     <result column="book_password" jdbcType="CHAR" property="bookPassword" />
     <result column="book_man" jdbcType="VARCHAR" property="bookMan" />
+    <result column="book_time" jdbcType="BIGINT" property="bookTime" />
+    <result column="book_down" jdbcType="INTEGER" property="bookDown" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -68,7 +70,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    book_id, book_belong, book_name, book_url, book_password, book_man
+    book_id, book_belong, book_name, book_url, book_password, book_man, book_time, book_down
   </sql>
   <select id="selectByExample" parameterType="com.ceasar.book.model.BookExample" resultMap="BaseResultMap">
     select
@@ -105,9 +107,11 @@
       SELECT LAST_INSERT_ID()
     </selectKey>
     insert into book (book_belong, book_name, book_url, 
-      book_password, book_man)
+      book_password, book_man, book_time, 
+      book_down)
     values (#{bookBelong,jdbcType=INTEGER}, #{bookName,jdbcType=VARCHAR}, #{bookUrl,jdbcType=VARCHAR}, 
-      #{bookPassword,jdbcType=CHAR}, #{bookMan,jdbcType=VARCHAR})
+      #{bookPassword,jdbcType=CHAR}, #{bookMan,jdbcType=VARCHAR}, #{bookTime,jdbcType=BIGINT}, 
+      #{bookDown,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.ceasar.book.model.Book">
     <selectKey keyProperty="bookId" order="AFTER" resultType="java.lang.Integer">
@@ -130,6 +134,12 @@
       <if test="bookMan != null">
         book_man,
       </if>
+      <if test="bookTime != null">
+        book_time,
+      </if>
+      <if test="bookDown != null">
+        book_down,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="bookBelong != null">
@@ -146,6 +156,12 @@
       </if>
       <if test="bookMan != null">
         #{bookMan,jdbcType=VARCHAR},
+      </if>
+      <if test="bookTime != null">
+        #{bookTime,jdbcType=BIGINT},
+      </if>
+      <if test="bookDown != null">
+        #{bookDown,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
@@ -176,6 +192,12 @@
       <if test="record.bookMan != null">
         book_man = #{record.bookMan,jdbcType=VARCHAR},
       </if>
+      <if test="record.bookTime != null">
+        book_time = #{record.bookTime,jdbcType=BIGINT},
+      </if>
+      <if test="record.bookDown != null">
+        book_down = #{record.bookDown,jdbcType=INTEGER},
+      </if>
     </set>
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -188,7 +210,9 @@
       book_name = #{record.bookName,jdbcType=VARCHAR},
       book_url = #{record.bookUrl,jdbcType=VARCHAR},
       book_password = #{record.bookPassword,jdbcType=CHAR},
-      book_man = #{record.bookMan,jdbcType=VARCHAR}
+      book_man = #{record.bookMan,jdbcType=VARCHAR},
+      book_time = #{record.bookTime,jdbcType=BIGINT},
+      book_down = #{record.bookDown,jdbcType=INTEGER}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -211,6 +235,12 @@
       <if test="bookMan != null">
         book_man = #{bookMan,jdbcType=VARCHAR},
       </if>
+      <if test="bookTime != null">
+        book_time = #{bookTime,jdbcType=BIGINT},
+      </if>
+      <if test="bookDown != null">
+        book_down = #{bookDown,jdbcType=INTEGER},
+      </if>
     </set>
     where book_id = #{bookId,jdbcType=INTEGER}
   </update>
@@ -220,8 +250,9 @@
       book_name = #{bookName,jdbcType=VARCHAR},
       book_url = #{bookUrl,jdbcType=VARCHAR},
       book_password = #{bookPassword,jdbcType=CHAR},
-      book_man = #{bookMan,jdbcType=VARCHAR}
+      book_man = #{bookMan,jdbcType=VARCHAR},
+      book_time = #{bookTime,jdbcType=BIGINT},
+      book_down = #{bookDown,jdbcType=INTEGER}
     where book_id = #{bookId,jdbcType=INTEGER}
   </update>
-
 </mapper>

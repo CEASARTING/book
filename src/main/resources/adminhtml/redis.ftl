@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title> java基础 </title>
+    <title> redis </title>
     <link rel="stylesheet" href="/css/style.css" type="text/css" />
     <link rel="stylesheet" href="/css/form.css" type="text/css" />
     <script src="/laydate/laydate.js"></script>
@@ -71,8 +71,8 @@
             shadeClose: true, //开启遮罩关闭
             area: ['850px', '600px'],
             scrollbar: false,
-            content:"/211/book/add/Page?dictId=5",
-            title:'添加java基础书籍'
+            content:"/211/book/add/Page?dictId=9",
+            title:'添加redis书籍'
         });
     }
 </script>
@@ -82,7 +82,7 @@
 </head>
 <body>
 <div id="header">
-    <#include "topmenue.ftl">
+<#include "topmenue.ftl">
 </div>
 <div id="container">
 <#include "leftmenue.ftl">
@@ -90,9 +90,9 @@
 
         <div id="handlelist" style="height: 147px;">
 
-                <div class="Width1">
-                   <button onclick="addJavaBase();">添加此类书籍</button>
-                </div>
+            <div class="Width1">
+                 <button onclick="addJavaBase();">添加此类书籍</button>
+            </div>
 
         </div>
         <div class="tablelist">
@@ -105,18 +105,19 @@
                     <td>上传时间</td>
                     <td>下载次数</td>
                 </tr>
-                <#if javaBase?exists>
-                    <#list javaBase as book>
-                        <tr >
-                            <td>${book.bookName}</td>
-                            <td>${book.bookUrl}</td>
-                            <td>${book.bookPassword}</td>
-                            <td>${book.bookMan}</td>
-                            <td>${book.bookTime?number_to_date}</td>
-                            <td>${book.bookDown}</td>
-                        </tr>
-                    </#list>
-                </#if>
+
+                 <#if redis?exists>
+                                <#list redis as book>
+                                    <tr >
+                                        <td>${book.bookName}</td>
+                                        <td>${book.bookUrl}</td>
+                                        <td>${book.bookPassword}</td>
+                                        <td>${book.bookMan}</td>
+                                        <td>${book.bookTime?number_to_date}</td>
+                                        <td>${book.bookDown}</td>
+                                    </tr>
+                                </#list>
+                            </#if>
 
             </table>
         </div>

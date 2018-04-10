@@ -2,9 +2,12 @@ package com.ceasar.book.service;
 
 import com.ceasar.book.mapper.BookMapper;
 import com.ceasar.book.model.Book;
+import com.ceasar.book.model.BookExample;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 /**
  * Created by dp on on 2018/4/9
@@ -16,8 +19,15 @@ public class BookService {
     @Autowired
     private BookMapper bookMapper;
 
-    public Book findById(int bookId){
-        Book book = new Book();
-        return book;
+    public void insert(Book book){
+        bookMapper.insert(book);
+    }
+
+
+    public List<Book> findByBelong(int belong){
+        BookExample bookExample = new BookExample();
+        BookExample.Criteria criteria = bookExample.createCriteria();
+        criteria.andBookBelongEqualTo(belong);
+        return bookMapper.selectByExample(bookExample);
     }
 }

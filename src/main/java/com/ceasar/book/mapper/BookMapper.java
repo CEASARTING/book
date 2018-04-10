@@ -1,6 +1,5 @@
 package com.ceasar.book.mapper;
 
-
 import java.util.List;
 
 import com.ceasar.book.model.Book;
@@ -29,5 +28,4 @@ public interface BookMapper {
     int updateByPrimaryKeySelective(Book record);
 
     int updateByPrimaryKey(Book record);
-
 }
