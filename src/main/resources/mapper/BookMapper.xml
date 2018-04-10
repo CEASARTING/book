@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ceasar.book.mapper.BookMapper">
+  <resultMap id="BaseResultMap" type="com.ceasar.book.model.Book">
+    <id column="book_id" jdbcType="INTEGER" property="bookId" />
+    <result column="book_belong" jdbcType="INTEGER" property="bookBelong" />
+    <result column="book_name" jdbcType="VARCHAR" property="bookName" />
+    <result column="book_url" jdbcType="VARCHAR" property="bookUrl" />
+    <result column="book_password" jdbcType="CHAR" property="bookPassword" />
+    <result column="book_man" jdbcType="VARCHAR" property="bookMan" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    book_id, book_belong, book_name, book_url, book_password, book_man
+  </sql>
+  <select id="selectByExample" parameterType="com.ceasar.book.model.BookExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from book
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from book
+    where book_id = #{bookId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from book
+    where book_id = #{bookId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.ceasar.book.model.BookExample">
+    delete from book
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.ceasar.book.model.Book">
+    <selectKey keyProperty="bookId" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into book (book_belong, book_name, book_url, 
+      book_password, book_man)
+    values (#{bookBelong,jdbcType=INTEGER}, #{bookName,jdbcType=VARCHAR}, #{bookUrl,jdbcType=VARCHAR}, 
+      #{bookPassword,jdbcType=CHAR}, #{bookMan,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ceasar.book.model.Book">
+    <selectKey keyProperty="bookId" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into book
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="bookBelong != null">
+        book_belong,
+      </if>
+      <if test="bookName != null">
+        book_name,
+      </if>
+      <if test="bookUrl != null">
+        book_url,
+      </if>
+      <if test="bookPassword != null">
+        book_password,
+      </if>
+      <if test="bookMan != null">
+        book_man,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="bookBelong != null">
+        #{bookBelong,jdbcType=INTEGER},
+      </if>
+      <if test="bookName != null">
+        #{bookName,jdbcType=VARCHAR},
+      </if>
+      <if test="bookUrl != null">
+        #{bookUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="bookPassword != null">
+        #{bookPassword,jdbcType=CHAR},
+      </if>
+      <if test="bookMan != null">
+        #{bookMan,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.ceasar.book.model.BookExample" resultType="java.lang.Long">
+    select count(*) from book
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update book
+    <set>
+      <if test="record.bookId != null">
+        book_id = #{record.bookId,jdbcType=INTEGER},
+      </if>
+      <if test="record.bookBelong != null">
+        book_belong = #{record.bookBelong,jdbcType=INTEGER},
+      </if>
+      <if test="record.bookName != null">
+        book_name = #{record.bookName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bookUrl != null">
+        book_url = #{record.bookUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bookPassword != null">
+        book_password = #{record.bookPassword,jdbcType=CHAR},
+      </if>
+      <if test="record.bookMan != null">
+        book_man = #{record.bookMan,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update book
+    set book_id = #{record.bookId,jdbcType=INTEGER},
+      book_belong = #{record.bookBelong,jdbcType=INTEGER},
+      book_name = #{record.bookName,jdbcType=VARCHAR},
+      book_url = #{record.bookUrl,jdbcType=VARCHAR},
+      book_password = #{record.bookPassword,jdbcType=CHAR},
+      book_man = #{record.bookMan,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ceasar.book.model.Book">
+    update book
+    <set>
+      <if test="bookBelong != null">
+        book_belong = #{bookBelong,jdbcType=INTEGER},
+      </if>
+      <if test="bookName != null">
+        book_name = #{bookName,jdbcType=VARCHAR},
+      </if>
+      <if test="bookUrl != null">
+        book_url = #{bookUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="bookPassword != null">
+        book_password = #{bookPassword,jdbcType=CHAR},
+      </if>
+      <if test="bookMan != null">
+        book_man = #{bookMan,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where book_id = #{bookId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ceasar.book.model.Book">
+    update book
+    set book_belong = #{bookBelong,jdbcType=INTEGER},
+      book_name = #{bookName,jdbcType=VARCHAR},
+      book_url = #{bookUrl,jdbcType=VARCHAR},
+      book_password = #{bookPassword,jdbcType=CHAR},
+      book_man = #{bookMan,jdbcType=VARCHAR}
+    where book_id = #{bookId,jdbcType=INTEGER}
+  </update>
+
+</mapper>

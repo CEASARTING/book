@@ -1,0 +1,167 @@
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, p, blockquote, th, td { margin:0; padding:0; }
+.body_bg
+{
+	width:1100px;
+	height:100%;
+	margin-left:auto;
+	margin-right:auto;
+}
+.region_1
+{
+	width:100%;
+	height:48px;
+	line-height:48px;
+	background-color:#f3f3f3;
+	color:#666666;
+	font-size:16px;
+}
+.region_2
+{
+	width:1040px;
+	margin-left:30px;
+	margin-top:20px;
+}
+.region_3
+{
+	width:100%;
+	height:63px;
+	line-height:63px;
+	background-color:#f9fafc;
+	border-bottom:1px solid  #e4e4e4;
+}
+.region_3 div
+{
+	width:25%;
+	height:63px;
+	line-height:63px;
+	float:left;
+}
+.clear
+{
+	clear:both;
+}
+.region_3 div span
+{
+	margin-left:30px;
+	font-size:16px;
+	color:#999999;
+}
+.region_4
+{
+	width:100%;
+	height:700px;
+	background-color:#fff;
+	margin-top:10px;
+}
+.region_5
+{
+	width:24.9%;
+	height:100%;
+	margin-left:0;
+	float:left;
+	border-right:1px solid #f2f2f2;
+}
+/*.region_5_table
+{
+	width:220px;
+	height:100%;
+	border:0;
+	margin-left:20px;
+	
+}*/
+.main_re1
+{
+	height:38px;
+	line-height:38px;
+	color:#666666;
+	width:220px;
+	margin-left:20px;
+	position:relative;
+}
+.main_re1 span:nth-child(2)
+{
+	position:absolute;
+	right:45px;
+	height:38px;
+	top:0;
+	color:#1abc9c;
+	display:none;
+	cursor:pointer;
+		
+}
+.main_re1 span:nth-child(3)
+{
+	position:absolute;
+	right:5px;
+	height:38px;
+	top:0;
+	color:#1abc9c;
+	display:none;
+	cursor:pointer;
+}
+.region_5_1
+{
+	width:220px;
+	height:38px;
+	line-height:38px;
+	margin-left:20px;
+	border:1px dashed #cccccc;
+	text-align:center;
+	color:#999999;
+	font-size:16px;
+	cursor:pointer;
+}
+.region_5_2
+{
+	width:100%;
+	height:100%;
+	position:relative;
+	display:none;
+}
+.region_5_2 input:nth-child(1)
+{
+	width:65%;
+	height:100%;
+	line-height:38px;
+	color:#999999;
+	position:absolute;
+	border:0;
+	left:0;
+	outline:none;
+}
+.region_5_input
+{
+	width:100px;
+	height:38px;
+	line-height:38px;
+	color:#666666;
+	background-color:#fff;
+	font-size:16px;
+	margin-left:10px;
+	border:0;
+	outline:none;
+	position:absolute;
+	left:0;
+	top:0;
+}
+.region_5_2 span:nth-child(2)
+{
+	position:absolute;
+	left:135px;
+	color:#1abc9c;
+	font-size:16px;
+	cursor:pointer;
+}
+.region_5_2 span:nth-child(3)
+{
+	position:absolute;
+	right:10px;
+	color:#1abc9c;
+	font-size:16px;
+	cursor:pointer;
+}
+
+.checked_menu
+{
+	border-right: 10px solid #1abc9c;
+}

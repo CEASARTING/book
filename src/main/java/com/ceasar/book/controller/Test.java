@@ -1,6 +1,10 @@
 package com.ceasar.book.controller;
 
+import com.ceasar.book.model.Book;
+import com.ceasar.book.service.BookService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -9,10 +13,20 @@ import org.springframework.web.bind.annotation.ResponseBody;
  */
 @Controller
 @RequestMapping("/test")
-@ResponseBody
+
 public class Test {
+    @Autowired
+    private BookService bookService;
     @RequestMapping("/hello")
-    public String test(){
-        return "hello";
+    public String test(Model model){
+        Book book = bookService.findById(1);
+        System.out.println(book);
+
+
+        model.addAttribute("topmenue","java");
+        model.addAttribute("leftmenue","javabase");
+
+
+        return "javabase";
     }
 }

@@ -1,13 +1,21 @@
 package com.ceasar.book;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.apache.ibatis.logging.LogFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
+@EnableAutoConfiguration
 @SpringBootApplication
+@ComponentScan
+@MapperScan("com.ceasar.book.mapper")
+@EnableScheduling
 public class BookApplication {
 
 	// 使用log4j2打印日志
