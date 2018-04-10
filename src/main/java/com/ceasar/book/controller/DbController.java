@@ -25,9 +25,9 @@ public class DbController {
         model.addAttribute("topmenue","database");
         model.addAttribute("leftmenue","mysql");
 
-        List<Book> books = bookService.findByBelong(Index.javaBase);
+        List<Book> books = bookService.findByBelong(Index.mysql);
         model.addAttribute("mysql",books);
-        return "cppbase";
+        return "mysql";
     }
 
     @RequestMapping("/redis")
@@ -35,8 +35,8 @@ public class DbController {
         model.addAttribute("topmenue","database");
         model.addAttribute("leftmenue","redis");
 
-        List<Book> books = bookService.findByBelong(Index.javaBase);
+        List<Book> books = bookService.findByBelong(Index.redis);
         model.addAttribute("redis",books);
-        return "cppbase";
+        return "redis";
     }
 }

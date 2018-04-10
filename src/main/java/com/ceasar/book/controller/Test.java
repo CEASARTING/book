@@ -19,8 +19,8 @@ public class Test {
     private BookService bookService;
     @RequestMapping("/hello")
     public String test(Model model){
-        Book book = bookService.findById(1);
-        System.out.println(book);
+        /*Book book = bookService.findById(1);
+        System.out.println(book);*/
 
 
         model.addAttribute("topmenue","java");

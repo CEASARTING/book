@@ -74,7 +74,20 @@
             content:"/211/book/add/Page?dictId=9",
             title:'添加redis书籍'
         });
-    }
+    };
+
+    function addDown(id) {
+            var form = new FormData();
+            form.append("bookId", id);
+
+            $.ajax({
+                url:"/211/book/add/down",
+                type:"post",
+                data:form,
+                processData:false,
+                contentType:false,
+            });
+        }
 </script>
 
 
@@ -110,7 +123,7 @@
                                 <#list redis as book>
                                     <tr >
                                         <td>${book.bookName}</td>
-                                        <td>${book.bookUrl}</td>
+                                        <td><a href="${book.bookUrl}" onclick="addDown(${book.bookId});">${book.bookUrl}</a></td>
                                         <td>${book.bookPassword}</td>
                                         <td>${book.bookMan}</td>
                                         <td>${book.bookTime?number_to_date}</td>

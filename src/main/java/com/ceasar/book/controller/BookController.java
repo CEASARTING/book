@@ -64,4 +64,12 @@ public class BookController {
             return map;
         }
     }
+
+    @RequestMapping("/add/down")
+    public void down(@RequestParam(value = "bookId") Integer bookId){
+
+        bookService.addDown(bookId);
+    }
+
+
 }

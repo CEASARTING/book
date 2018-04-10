@@ -11,8 +11,19 @@
 <#if "${topmenue}" == "c++">
 <div id="leftmenu">
     <div class="menu2"><a href="/211/book/cpp/cppbase" <#if "${leftmenue}" == "cppbase">class="active" </#if>>c++基础</a></div>
+
 </div>
 </#if>
+
+
+<#--前端左边菜单-->
+<#if "${topmenue}" == "frontEnd">
+<div id="leftmenu">
+    <div class="menu2"><a href="/211/book/database/mysql" <#if "${leftmenue}" == "frontEnd">class="active" </#if>>前端</a></div>
+</div>
+
+</#if>
+
 
 <#--数据结构左边菜单-->
 <#if "${topmenue}" == "dataStructure">
@@ -29,6 +40,17 @@
     <div class="menu2"><a href="/211/book/database/mysql" <#if "${leftmenue}" == "mysql">class="active" </#if>>MySQL</a></div>
     <div class="menu2"><a href="/211/book/database/redis" <#if "${leftmenue}" == "redis">class="active" </#if>>Redis</a></div>
 </div>
+</#if>
 
+
+
+<#--计算机网络-->
+<#if "${topmenue}" == "network">
+<div id="leftmenu">
+    <div class="menu2"><a href="/211/book/database/mysql" <#if "${leftmenue}" == "network">class="active" </#if>>计算机网络</a></div>
+</div>
 
 </#if>
+
+
+
