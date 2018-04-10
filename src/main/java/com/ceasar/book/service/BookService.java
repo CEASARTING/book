@@ -30,4 +30,14 @@ public class BookService {
         criteria.andBookBelongEqualTo(belong);
         return bookMapper.selectByExample(bookExample);
     }
+
+    public void addDown(int bookId){
+        Book book = bookMapper.selectByPrimaryKey(bookId);
+        book.setBookDown(book.getBookDown()+1);
+        bookMapper.updateByPrimaryKey(book);
+    }
+
+    public Book findById(int id){
+        return bookMapper.selectByPrimaryKey(id);
+    }
 }

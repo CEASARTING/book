@@ -77,22 +77,15 @@
     };
 
     function addDown(id) {
+        var form = new FormData();
+        form.append("bookId", id);
+
         $.ajax({
-            url:"/211/book/add/do",
+            url:"/211/book/add/down",
             type:"post",
             data:form,
             processData:false,
             contentType:false,
-            success:function(data){
-                //window.clearInterval(timer);
-                if(data.data=="ok"){
-                    layer.alert("添加成功");
-                    window.parent.location.href = "/211/book/java/javabase";
-                    window.parent.top.layer.closeAll();
-                }else {
-                    layer.alert(data.msg);
-                }
-            }
         });
     }
 </script>
