@@ -13,6 +13,10 @@ public class Book {
 
     private String bookMan;
 
+    private Long bookTime;
+
+    private Integer bookDown;
+
     public Integer getBookId() {
         return bookId;
     }
@@ -59,5 +63,21 @@ public class Book {
 
     public void setBookMan(String bookMan) {
         this.bookMan = bookMan == null ? null : bookMan.trim();
+    }
+
+    public Long getBookTime() {
+        return bookTime;
+    }
+
+    public void setBookTime(Long bookTime) {
+        this.bookTime = bookTime;
+    }
+
+    public Integer getBookDown() {
+        return bookDown;
+    }
+
+    public void setBookDown(Integer bookDown) {
+        this.bookDown = bookDown;
     }
 }

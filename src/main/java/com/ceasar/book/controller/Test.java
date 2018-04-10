@@ -13,19 +13,15 @@ import org.springframework.web.bind.annotation.ResponseBody;
  */
 @Controller
 @RequestMapping("/test")
-
+@ResponseBody
 public class Test {
     @Autowired
     private BookService bookService;
     @RequestMapping("/hello")
     public String test(Model model){
-        Book book = bookService.findById(1);
-        System.out.println(book);
-
-
-        model.addAttribute("topmenue","java");
-        model.addAttribute("leftmenue","javabase");
-
+        Book book = new Book();
+        book.setBookMan("123123");
+        bookService.insert(book);
 
         return "javabase";
     }

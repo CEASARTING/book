@@ -503,6 +503,126 @@ public class BookExample {
             addCriterion("book_man not between", value1, value2, "bookMan");
             return (Criteria) this;
         }
+
+        public Criteria andBookTimeIsNull() {
+            addCriterion("book_time is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andBookTimeIsNotNull() {
+            addCriterion("book_time is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andBookTimeEqualTo(Long value) {
+            addCriterion("book_time =", value, "bookTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andBookTimeNotEqualTo(Long value) {
+            addCriterion("book_time <>", value, "bookTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andBookTimeGreaterThan(Long value) {
+            addCriterion("book_time >", value, "bookTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andBookTimeGreaterThanOrEqualTo(Long value) {
+            addCriterion("book_time >=", value, "bookTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andBookTimeLessThan(Long value) {
+            addCriterion("book_time <", value, "bookTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andBookTimeLessThanOrEqualTo(Long value) {
+            addCriterion("book_time <=", value, "bookTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andBookTimeIn(List<Long> values) {
+            addCriterion("book_time in", values, "bookTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andBookTimeNotIn(List<Long> values) {
+            addCriterion("book_time not in", values, "bookTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andBookTimeBetween(Long value1, Long value2) {
+            addCriterion("book_time between", value1, value2, "bookTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andBookTimeNotBetween(Long value1, Long value2) {
+            addCriterion("book_time not between", value1, value2, "bookTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andBookDownIsNull() {
+            addCriterion("book_down is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andBookDownIsNotNull() {
+            addCriterion("book_down is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andBookDownEqualTo(Integer value) {
+            addCriterion("book_down =", value, "bookDown");
+            return (Criteria) this;
+        }
+
+        public Criteria andBookDownNotEqualTo(Integer value) {
+            addCriterion("book_down <>", value, "bookDown");
+            return (Criteria) this;
+        }
+
+        public Criteria andBookDownGreaterThan(Integer value) {
+            addCriterion("book_down >", value, "bookDown");
+            return (Criteria) this;
+        }
+
+        public Criteria andBookDownGreaterThanOrEqualTo(Integer value) {
+            addCriterion("book_down >=", value, "bookDown");
+            return (Criteria) this;
+        }
+
+        public Criteria andBookDownLessThan(Integer value) {
+            addCriterion("book_down <", value, "bookDown");
+            return (Criteria) this;
+        }
+
+        public Criteria andBookDownLessThanOrEqualTo(Integer value) {
+            addCriterion("book_down <=", value, "bookDown");
+            return (Criteria) this;
+        }
+
+        public Criteria andBookDownIn(List<Integer> values) {
+            addCriterion("book_down in", values, "bookDown");
+            return (Criteria) this;
+        }
+
+        public Criteria andBookDownNotIn(List<Integer> values) {
+            addCriterion("book_down not in", values, "bookDown");
+            return (Criteria) this;
+        }
+
+        public Criteria andBookDownBetween(Integer value1, Integer value2) {
+            addCriterion("book_down between", value1, value2, "bookDown");
+            return (Criteria) this;
+        }
+
+        public Criteria andBookDownNotBetween(Integer value1, Integer value2) {
+            addCriterion("book_down not between", value1, value2, "bookDown");
+            return (Criteria) this;
+        }
     }
 
     public static class Criteria extends GeneratedCriteria {
