@@ -26,7 +26,10 @@ public class DbController {
         model.addAttribute("leftmenue","mysql");
 
         List<Book> books = bookService.findByBelong(Index.mysql);
-        model.addAttribute("mysql",books);
+        if(books==null || books.size()==0){
+            model.addAttribute("mysql",null);
+        }else
+            model.addAttribute("mysql",books);
         return "mysql";
     }
 
@@ -36,7 +39,10 @@ public class DbController {
         model.addAttribute("leftmenue","redis");
 
         List<Book> books = bookService.findByBelong(Index.redis);
-        model.addAttribute("redis",books);
+        if(books==null || books.size()==0){
+            model.addAttribute("redis",null);
+        }else
+            model.addAttribute("redis",books);
         return "redis";
     }
 }

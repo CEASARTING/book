@@ -11,24 +11,25 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 
 /**
- * Created by dp on on 2018/4/10
+ * Created by dp on 2018/4/10.
  */
+
 @Controller
-@RequestMapping("/211/book/ds")
-public class DsController {
+@RequestMapping("/211/book/network")
+public class NetworkController {
     @Autowired
     private BookService bookService;
+    @RequestMapping("/network")
+    public String network(Model model){
+        model.addAttribute("topmenue","network");
+        model.addAttribute("leftmenue","network");
 
-    @RequestMapping("/dataStructure")
-    public String dataStructure(Model model){
-        model.addAttribute("topmenue","dataStructure");
-        model.addAttribute("leftmenue","dataStructure");
-
-        List<Book> books = bookService.findByBelong(Index.dsId);
+        List<Book> books = bookService.findByBelong(Index.netWorkId);
         if(books==null || books.size()==0){
-            model.addAttribute("dataStructure",null);
+            model.addAttribute("network",null);
         }else
-            model.addAttribute("dataStructure",books);
-        return "dataStructure";
+            model.addAttribute("network",books);
+
+        return "network";
     }
 }

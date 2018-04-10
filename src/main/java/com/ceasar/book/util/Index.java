@@ -10,6 +10,8 @@ public class Index {
     public static int cId = 2;      //c++ 类
     public static int dsId = 3;     //数据结构 类
     public static int dbId = 4;     //数据库 类
+    public static int frontId = 10;     //前端 类
+    public static int netWorkId = 11;     //计网 类
 
 
     //java子类

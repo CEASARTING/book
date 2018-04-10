@@ -25,7 +25,10 @@ public class CppController {
         model.addAttribute("leftmenue","cppbase");
 
         List<Book> books = bookService.findByBelong(Index.cppBase);
-        model.addAttribute("cppBase",books);
+        if(books==null || books.size()==0){
+            model.addAttribute("cppBase",null);
+        }else
+            model.addAttribute("cppBase",books);
 
         return "cppbase";
     }

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title> mysql </title>
+    <title> 计算机网络 </title>
     <link rel="stylesheet" href="/css/style.css" type="text/css" />
     <link rel="stylesheet" href="/css/form.css" type="text/css" />
     <script src="/laydate/laydate.js"></script>
@@ -71,8 +71,8 @@
                 shadeClose: true, //开启遮罩关闭
                 area: ['850px', '600px'],
                 scrollbar: false,
-                content:"/211/book/add/Page?dictId=8",
-                title:'添加mysql书籍'
+                content:"/211/book/add/Page?dictId=11",
+                title:'添加计算机网络书籍'
             });
         };
 
@@ -110,7 +110,7 @@
         </div>
         <div class="tablelist">
             <table >
-            <#if mysql?exists>
+            <#if network?exists>
                 <tr >
                     <td>书名</td>
                     <td>网盘链接</td>
@@ -119,7 +119,7 @@
                     <td>上传时间</td>
                     <td>下载次数</td>
                 </tr>
-                <#list mysql as book>
+                <#list network as book>
                     <tr >
                         <td>${book.bookName}</td>
                         <td><a href="${book.bookUrl}" onclick="addDown(${book.bookId});">${book.bookUrl}</a></td>

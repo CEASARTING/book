@@ -110,6 +110,7 @@
         </div>
         <div class="tablelist">
             <table >
+            <#if redis?exists>
                 <tr >
                     <td>书名</td>
                     <td>网盘链接</td>
@@ -118,19 +119,19 @@
                     <td>上传时间</td>
                     <td>下载次数</td>
                 </tr>
-
-                 <#if redis?exists>
-                                <#list redis as book>
-                                    <tr >
-                                        <td>${book.bookName}</td>
-                                        <td><a href="${book.bookUrl}" onclick="addDown(${book.bookId});">${book.bookUrl}</a></td>
-                                        <td>${book.bookPassword}</td>
-                                        <td>${book.bookMan}</td>
-                                        <td>${book.bookTime?number_to_date}</td>
-                                        <td>${book.bookDown}</td>
-                                    </tr>
-                                </#list>
-                            </#if>
+                <#list redis as book>
+                    <tr >
+                        <td>${book.bookName}</td>
+                        <td><a href="${book.bookUrl}" onclick="addDown(${book.bookId});">${book.bookUrl}</a></td>
+                        <td>${book.bookPassword}</td>
+                        <td>${book.bookMan}</td>
+                        <td>${book.bookTime?number_to_date}</td>
+                        <td>${book.bookDown}</td>
+                    </tr>
+                </#list>
+            <#else >
+                <label onclick="addJavaBase();">还没有此类书籍，你来添加吧！</label>
+            </#if>
 
             </table>
         </div>
@@ -140,7 +141,7 @@
     <div class="clear"></div>
 </div>
 <div id="footer">
-    <a href="#">西电老科211</a>
+    <a href="http://web.xidian.edu.cn/liuqin/">西电老科211</a>
 </div>
 
 </body>

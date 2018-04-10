@@ -19,7 +19,7 @@
 <#--前端左边菜单-->
 <#if "${topmenue}" == "frontEnd">
 <div id="leftmenu">
-    <div class="menu2"><a href="/211/book/database/mysql" <#if "${leftmenue}" == "frontEnd">class="active" </#if>>前端</a></div>
+    <div class="menu2"><a href="/211/book/frontEnd/frontEnd" <#if "${leftmenue}" == "frontEnd">class="active" </#if>>前端</a></div>
 </div>
 
 </#if>
@@ -28,7 +28,7 @@
 <#--数据结构左边菜单-->
 <#if "${topmenue}" == "dataStructure">
 <div id="leftmenu">
-    <div class="menu2"><a href="/211/book/ds/dataStructure" <#if "${leftmenue}" == "dataStructure">class="active" </#if>>数据结构</a></div>
+    <div class="menu2"><a href="/211/book/ds/dataStructure" <#if "${leftmenue}" == "dataStructure">class="active" </#if>>数据结构与算法</a></div>
 
 </div>
 </#if>
@@ -47,7 +47,7 @@
 <#--计算机网络-->
 <#if "${topmenue}" == "network">
 <div id="leftmenu">
-    <div class="menu2"><a href="/211/book/database/mysql" <#if "${leftmenue}" == "network">class="active" </#if>>计算机网络</a></div>
+    <div class="menu2"><a href="/211/book/network/network" <#if "${leftmenue}" == "network">class="active" </#if>>计算机网络</a></div>
 </div>
 
 </#if>

@@ -25,7 +25,10 @@ public class JavaController {
         model.addAttribute("leftmenue","javabase");
 
         List<Book> books = bookService.findByBelong(Index.javaBase);
-        model.addAttribute("javaBase",books);
+        if(books==null || books.size()==0){
+            model.addAttribute("javaBase",null);
+        }else
+            model.addAttribute("javaBase",books);
 
         return "javabase";
     }
@@ -37,7 +40,11 @@ public class JavaController {
         model.addAttribute("leftmenue","frame");
 
         List<Book> books = bookService.findByBelong(Index.javaFrame);
-        model.addAttribute("javaFrame",books);
+        if(books==null || books.size()==0){
+            model.addAttribute("javaFrame",null);
+        }else
+
+            model.addAttribute("javaFrame",books);
 
         return "javaFrame";
 
