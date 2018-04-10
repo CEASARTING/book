@@ -74,6 +74,26 @@
             content:"/211/book/add/Page?dictId=5",
             title:'添加java基础书籍'
         });
+    };
+
+    function addDown(id) {
+        $.ajax({
+            url:"/211/book/add/do",
+            type:"post",
+            data:form,
+            processData:false,
+            contentType:false,
+            success:function(data){
+                //window.clearInterval(timer);
+                if(data.data=="ok"){
+                    layer.alert("添加成功");
+                    window.parent.location.href = "/211/book/java/javabase";
+                    window.parent.top.layer.closeAll();
+                }else {
+                    layer.alert(data.msg);
+                }
+            }
+        });
     }
 </script>
 
@@ -109,7 +129,7 @@
                     <#list javaBase as book>
                         <tr >
                             <td>${book.bookName}</td>
-                            <td>${book.bookUrl}</td>
+                            <td><a href="${book.bookUrl}" onclick="addDown(${book.bookId});">${book.bookUrl}</a></td>
                             <td>${book.bookPassword}</td>
                             <td>${book.bookMan}</td>
                             <td>${book.bookTime?number_to_date}</td>
