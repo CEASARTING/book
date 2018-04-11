@@ -19,6 +19,12 @@ import java.util.List;
 public class FrontEndController {
     @Autowired
     private BookService bookService;
+
+    /**
+     * 返回前端界面
+     * @param model
+     * @return
+     */
     @RequestMapping("/frontEnd")
     public String frontEnd(Model model){
         model.addAttribute("topmenue","frontEnd");

@@ -20,6 +20,11 @@ public class DbController {
     @Autowired
     private BookService bookService;
 
+    /**
+     * 返回mysql界面
+     * @param model
+     * @return
+     */
     @RequestMapping("/mysql")
     public String mysql(Model model){
         model.addAttribute("topmenue","database");
@@ -33,6 +38,11 @@ public class DbController {
         return "mysql";
     }
 
+    /**
+     * 返回redis界面
+     * @param model
+     * @return
+     */
     @RequestMapping("/redis")
     public String redis(Model model){
         model.addAttribute("topmenue","database");

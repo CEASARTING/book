@@ -19,6 +19,12 @@ import java.util.List;
 public class NetworkController {
     @Autowired
     private BookService bookService;
+
+    /**
+     * 返回计网界面
+     * @param model
+     * @return
+     */
     @RequestMapping("/network")
     public String network(Model model){
         model.addAttribute("topmenue","network");

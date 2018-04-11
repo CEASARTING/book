@@ -19,6 +19,11 @@ public class DsController {
     @Autowired
     private BookService bookService;
 
+    /**
+     * 返回数据结构界面
+     * @param model
+     * @return
+     */
     @RequestMapping("/dataStructure")
     public String dataStructure(Model model){
         model.addAttribute("topmenue","dataStructure");

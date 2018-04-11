@@ -140,7 +140,7 @@
     <div class="clear"></div>
 </div>
 <div id="footer">
-    <a href="http://web.xidian.edu.cn/liuqin/">西电老科211</a>
+<#include "footer.ftl">
 </div>
 
 </body>

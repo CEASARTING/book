@@ -19,6 +19,12 @@ import java.util.List;
 public class JavaController {
     @Autowired
     private BookService bookService;
+
+    /**
+     * 返回Java基础界面
+     * @param model
+     * @return
+     */
     @RequestMapping("/javabase")
     public String javabase(Model model){
         model.addAttribute("topmenue","java");
@@ -34,6 +40,11 @@ public class JavaController {
     }
 
 
+    /**
+     * 返回Java框架界面
+     * @param model
+     * @return
+     */
     @RequestMapping("/frame")
     public String frame(Model model){
         model.addAttribute("topmenue","java");

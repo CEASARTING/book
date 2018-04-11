@@ -19,11 +19,20 @@ public class BookService {
     @Autowired
     private BookMapper bookMapper;
 
+    /**
+     * 插入
+     * @param book
+     */
     public void insert(Book book){
         bookMapper.insert(book);
     }
 
 
+    /**
+     * 通过分类查找书籍
+     * @param belong
+     * @return
+     */
     public List<Book> findByBelong(int belong){
         BookExample bookExample = new BookExample();
         BookExample.Criteria criteria = bookExample.createCriteria();
@@ -31,6 +40,10 @@ public class BookService {
         return bookMapper.selectByExample(bookExample);
     }
 
+    /**
+     * 增加下载次数
+     * @param bookId
+     */
     public void addDown(int bookId){
         Book book = bookMapper.selectByPrimaryKey(bookId);
         book.setBookDown(book.getBookDown()+1);

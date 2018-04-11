@@ -19,6 +19,11 @@ public class CppController {
     @Autowired
     private BookService bookService;
 
+    /**
+     * 返回c++界面
+     * @param model
+     * @return
+     */
     @RequestMapping("/cppbase")
     public String cppbase(Model model){
         model.addAttribute("topmenue","c++");

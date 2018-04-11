@@ -25,6 +25,12 @@ public class BookController {
     @Autowired
     private HttpServletRequest httpServletRequest;
 
+    /**
+     * 调出添加书的页面
+     * @param model
+     * @param dictId
+     * @return
+     */
     @RequestMapping("/add/Page")
     public String Page(Model model,
                           @RequestParam(value = "dictId") Integer dictId){
@@ -34,6 +40,16 @@ public class BookController {
         return "addBookPage";
     }
 
+    /**
+     * 执行添加行为
+     * @param model
+     * @param bookname
+     * @param bookurl
+     * @param bookpassword
+     * @param upman
+     * @param belong
+     * @return
+     */
     @ResponseBody
     @RequestMapping("/add/do")
     public Map doAdd(Model model,
@@ -65,6 +81,10 @@ public class BookController {
         }
     }
 
+    /**
+     * 增加下载次数
+     * @param bookId
+     */
     @RequestMapping("/add/down")
     public void down(@RequestParam(value = "bookId") Integer bookId){
 
