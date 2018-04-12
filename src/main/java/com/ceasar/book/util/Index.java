@@ -14,8 +14,8 @@ public class Index {
     public static int netWorkId = 11;     //计网 类
     public static int osId = 12;     //操作系统 类
     public static int pythonId = 13;     //python 类
-    public static int elseId = 13;     //其他 类
-    public static int mlId = 13;     //机器学习与大数据 类
+    public static int elseId = 14;     //其他 类
+    public static int mlId = 15;     //机器学习与大数据 类
 
 
     //java子类
