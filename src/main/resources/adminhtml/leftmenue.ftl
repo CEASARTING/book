@@ -49,8 +49,14 @@
 <div id="leftmenu">
     <div class="menu2"><a href="/211/book/network/network" <#if "${leftmenue}" == "network">class="active" </#if>>计算机网络</a></div>
 </div>
-
 </#if>
 
+
+<#--小记-->
+<#if "${topmenue}" == "essay">
+<div id="leftmenu">
+    <div class="menu2"><a href="/211/book/essay/essay" <#if "${leftmenue}" == "essay">class="active" </#if>>小记</a></div>
+</div>
+</#if>
 
 

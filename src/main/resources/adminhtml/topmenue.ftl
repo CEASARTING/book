@@ -6,5 +6,6 @@
         <li><a href="/211/book/ds/dataStructure" <#if "${topmenue}" == "dataStructure">class="active" </#if> >数据结构与算法</a></li>
         <li><a href="/211/book/database/mysql" <#if "${topmenue}" == "database">class="active" </#if> >数据库</a></li>
         <li><a href="/211/book/network/network" <#if "${topmenue}" == "network">class="active" </#if> >计算机网络</a></li>
+        <li><a href="/211/book/essay/essay" <#if "${topmenue}" == "essay">class="active" </#if> >小记</a></li>
     </ul>
 </div>

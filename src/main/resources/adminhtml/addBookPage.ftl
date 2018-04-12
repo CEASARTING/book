@@ -48,6 +48,21 @@
         var bookurl = document.getElementById("bookurl").value;
         var bookpassword = document.getElementById("bookpassword").value;
         var upman = document.getElementById("upman").value;
+
+        if(trim(bookname) == null || trim(bookname) == ""){
+            layer.alert("书名不能为空！",{icon: 5, shade: false});
+            return false;
+        }else if(trim(bookurl) == null || trim(bookurl) == ""){
+            layer.alert("你得给个链接啊！",{icon: 5, shade: false});
+            return false;
+        }else if(trim(bookpassword) == null || trim(bookpassword) == ""){
+            layer.alert("不给密码没法下载啊！",{icon: 5, shade: false});
+            return false;
+        }else if(trim(upman) == null || trim(upman) == ""){
+            layer.alert("输入你的大名，让别人记住你！",{icon: 5, shade: false});
+            return false;
+        }
+
         var belong = id;
 
         var form = new FormData();
