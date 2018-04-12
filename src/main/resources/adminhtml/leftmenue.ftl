@@ -52,6 +52,38 @@
 </#if>
 
 
+<#--python-->
+<#if "${topmenue}" == "python">
+<div id="leftmenu">
+    <div class="menu2"><a href="/211/book/python/python" <#if "${leftmenue}" == "python">class="active" </#if>>python</a></div>
+</div>
+</#if>
+
+
+<#--操作系统-->
+<#if "${topmenue}" == "os">
+<div id="leftmenu">
+    <div class="menu2"><a href="/211/book/os/os" <#if "${leftmenue}" == "os">class="active" </#if>>操作系统</a></div>
+</div>
+</#if>
+
+
+<#--机器学习与大数据-->
+<#if "${topmenue}" == "ml">
+<div id="leftmenu">
+    <div class="menu2"><a href="/211/book/ml/ml" <#if "${leftmenue}" == "ml">class="active" </#if>>机器学习与大数据</a></div>
+</div>
+</#if>
+
+
+<#--其他-->
+<#if "${topmenue}" == "else">
+<div id="leftmenu">
+    <div class="menu2"><a href="/211/book/else/else" <#if "${leftmenue}" == "else">class="active" </#if>>其他</a></div>
+</div>
+</#if>
+
+
 <#--小记-->
 <#if "${topmenue}" == "essay">
 <div id="leftmenu">

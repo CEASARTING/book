@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title> redis </title>
+    <title> python </title>
     <link rel="stylesheet" href="/css/style.css" type="text/css" />
     <link rel="stylesheet" href="/css/form.css" type="text/css" />
     <script src="/laydate/laydate.js"></script>
@@ -63,20 +63,20 @@
         }
     </style>
 
-<script type="text/javascript">
-    function addJavaBase() {
+    <script type="text/javascript">
+        function addJavaBase() {
 
-        layer.open({
-            type: 2,
-            shadeClose: true, //开启遮罩关闭
-            area: ['850px', '600px'],
-            scrollbar: false,
-            content:"/211/book/add/Page?dictId=9",
-            title:'添加redis书籍'
-        });
-    };
+            layer.open({
+                type: 2,
+                shadeClose: true, //开启遮罩关闭
+                area: ['850px', '600px'],
+                scrollbar: false,
+                content:"/211/book/add/Page?dictId=13",
+                title:'添加python书籍'
+            });
+        };
 
-    function addDown(id) {
+        function addDown(id) {
             var form = new FormData();
             form.append("bookId", id);
 
@@ -88,7 +88,7 @@
                 contentType:false,
             });
         }
-</script>
+    </script>
 
 
 
@@ -106,13 +106,13 @@
         <div id="handlelist" style="height: 147px;">
 
             <div class="Width1">
-                 <button onclick="addJavaBase();">添加此类书籍</button>
+                <button onclick="addJavaBase();">添加此类书籍</button>
             </div>
 
         </div>
         <div class="tablelist">
             <table >
-            <#if redis?exists>
+            <#if python?exists>
                 <tr >
                     <td>书名</td>
                     <td>网盘链接</td>
@@ -121,7 +121,7 @@
                     <td>上传时间</td>
                     <td>下载次数</td>
                 </tr>
-                <#list redis as book>
+                <#list python as book>
                     <tr >
                         <td>${book.bookName}</td>
                         <td><a href="${book.bookUrl}" onclick="addDown(${book.bookId});">${book.bookUrl}</a></td>
